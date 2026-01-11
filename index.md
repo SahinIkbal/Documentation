@@ -29,19 +29,15 @@ Claude Desktop reads MCP servers from its configuration file. Add an entry that 
 
 > Important: Replace `<YOUR_USERNAME>` with your Windows account name.
 
-### Required: snippet to add (merge into existing config)
+### Required: add ONLY this block
 
-Add **only** the following block inside your existing `"mcpServers"` object (the rest of your config is pre-existing).
+Paste the following **inside your existing** `"mcpServers": { ... }` object (add a trailing comma if your JSON requires it).
 
 ```jsonc
-{
-  "mcpServers": {
-    "revit-mcp-bridge": {
-      "command": "C:\\Users\\<YOUR_USERNAME>\\AppData\\Local\\Programs\\Revit AI\\Revit AI Automation MCP Service.exe",
-      "args": [],
-      "env": {}
-    }
-  }
+"revit-mcp-bridge": {
+  "command": "C:\\Users\\<YOUR_USERNAME>\\AppData\\Local\\Programs\\Revit AI\\Revit AI Automation MCP Service.exe",
+  "args": [],
+  "env": {}
 }
 ```
 
