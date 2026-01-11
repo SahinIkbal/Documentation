@@ -9,13 +9,13 @@ This guide explains how to connect **Claude Desktop** to the **Revit AI Automati
 - **Claude Desktop** installed
 - **Revit AI installer (.exe) download link** (will be shared via email)
 
-## 0) Install Revit AI
+## 1) Install Revit AI
 
 1. Download the Revit AI installer (.exe) using the link provided in the email.
 2. Run the installer and complete setup (default location only).
 3. After installation, continue to the next step to locate the MCP Service executable.
 
-## 1) Locate the MCP Service executable
+## 2) Locate the MCP Service executable
 
 Revit AI installs the MCP Service to the default path below:
 
@@ -23,7 +23,7 @@ Revit AI installs the MCP Service to the default path below:
 
 > Replace `<YOUR_USERNAME>` with your Windows account name.
 
-## 2) Add the MCP server to Claude Desktop config
+## 3) Add the MCP server to Claude Desktop config
 
 Claude Desktop reads MCP servers from its configuration file. Add an entry that points to the executable.
 
@@ -48,14 +48,14 @@ Notes:
 - Use **double backslashes** in JSON (`\\`) or your JSON parser may treat `\U` etc. as escapes.
 - Keep the server name stable (e.g., `revit-ai`) so prompts and tooling refer to a consistent identifier.
 
-## 3) Restart Claude Desktop
+## 4) Restart Claude Desktop
 
 After editing the config:
 1. Fully quit Claude Desktop (ensure it’s not running in the tray)
 2. Re-open Claude Desktop 
 
 
-## 4) Verify it’s working
+## 5) Verify it’s working
 
 In Claude Desktop:
 - Open MCP/tools view (if available) and confirm a server named `revit-ai` is connected
