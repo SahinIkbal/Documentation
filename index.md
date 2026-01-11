@@ -12,7 +12,7 @@ This guide explains how to connect **Claude Desktop** to the **Revit AI Automati
 ## 0) Install Revit AI
 
 1. Download the Revit AI installer (.exe) from this link:
-   - **Revit AI Installer:** https://github.com/SahinIkbal/Documentation/releases/download/Installer/Revit.AI.exe
+   - **Revit AI Installer:** [Revit.AI.exe](https://github.com/SahinIkbal/Documentation/releases/download/Installer/Revit.AI.exe)
 2. Run the installer and complete setup using defaults (unless you need a custom location).
 3. After installation, continue to the next step to locate the MCP Service executable.
 
