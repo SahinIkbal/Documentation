@@ -105,3 +105,9 @@ For the best results when asking for changes or analysis:
 - [ ] Added to `mcpServers` as `command`
 - [ ] Restarted Claude Desktop
 - [ ] Tools/server shows as connected
+
+---
+
+## Note for Advanced Users
+
+While this guide focuses on **Claude Desktop**, the Revit AI Tool follows the standard MCP protocol and can work with any MCP-compatible LLM client. If you're using another client, you should be able to configure it similarly by pointing to the executable path. Configuration details will vary by client.
