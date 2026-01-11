@@ -27,26 +27,45 @@ Revit AI installs the MCP Service to the default path below:
 
 Claude Desktop reads MCP servers from its configuration file. Add an entry that points to the executable.
 
-> Important: Ensure the path is correct and the file exists. If the path contains spaces, that’s OK—just pass it as the `command` value.
+> Important: Replace `<YOUR_USERNAME>` with your Windows account name.
 
-### Example config (recommended)
+### Required: snippet to add (merge into existing config)
+
+Add **only** the following block inside your existing `"mcpServers"` object (the rest of your config is pre-existing).
 
 ```jsonc
 {
-  // ...existing code...
   "mcpServers": {
-    "revit-ai": {
+    "revit-mcp-bridge": {
       "command": "C:\\Users\\<YOUR_USERNAME>\\AppData\\Local\\Programs\\Revit AI\\Revit AI Automation MCP Service.exe",
-      "args": []
+      "args": [],
+      "env": {}
     }
   }
-  // ...existing code...
+}
+```
+
+### Reference: full example config (do not overwrite unless intended)
+
+```jsonc
+{
+  "mcpServers": {
+    "revit-mcp-bridge": {
+      "command": "C:\\Users\\<YOUR_USERNAME>\\AppData\\Local\\Programs\\Revit AI\\Revit AI Automation MCP Service.exe",
+      "args": [],
+      "env": {}
+    }
+  },
+  "globalShortcut": "",
+  "preferences": {
+    "menuBarEnabled": false
+  }
 }
 ```
 
 Notes:
 - Use **double backslashes** in JSON (`\\`) or your JSON parser may treat `\U` etc. as escapes.
-- Keep the server name stable (e.g., `revit-ai`) so prompts and tooling refer to a consistent identifier.
+- Keep the server name stable (e.g., `revit-mcp-bridge`) so prompts and tooling refer to a consistent identifier.
 
 ## 4) Restart Claude Desktop
 
@@ -58,7 +77,7 @@ After editing the config:
 ## 5) Verify it’s working
 
 In Claude Desktop:
-- Open MCP/tools view (if available) and confirm a server named `revit-ai` is connected
+- Open MCP/tools view (if available) and confirm a server named `revit-mcp-bridge` is connected
 - If there’s a “refresh/reload tools” action, run it after restart
 
 If the server starts successfully, Claude should be able to discover tools exposed by the service.
