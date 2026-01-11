@@ -63,20 +63,29 @@ Notes:
 - Use **double backslashes** in JSON (`\\`) or your JSON parser may treat `\U` etc. as escapes.
 - Keep the server name stable (e.g., `revit-mcp-bridge`) so prompts and tooling refer to a consistent identifier.
 
-## 4) Restart Claude Desktop
+## 4) Prepare Revit and Restart Claude Desktop
 
-After editing the config:
-1. Fully quit Claude Desktop (ensure it’s not running in the tray)
-2. Re-open Claude Desktop 
+1. **Open Revit:** Launch Autodesk Revit and open your project.
+   > **Important:** Ensure only **one instance** of Revit is running. Having multiple Revit windows open may cause connection issues.
+2. **Quit Claude Desktop:** Fully quit Claude Desktop.
+   > **Tip:** If Claude was previously open, check the Task Manager (`Ctrl + Shift + Esc`) to ensure no background processes remain. If necessary, end the task manually.
+3. **Re-open Claude Desktop:** Launch the application again to load the new configuration.
 
 
-## 5) Verify it’s working
+## 5) Verify it's working
 
 In Claude Desktop:
 - Open MCP/tools view (if available) and confirm a server named `revit-mcp-bridge` is connected
 - If there’s a “refresh/reload tools” action, run it after restart
 
 If the server starts successfully, Claude should be able to discover tools exposed by the service.
+
+## 6) Best Practice: Visual Context
+
+For the best results when asking for changes or analysis:
+- **Take a screenshot** of your current Revit view or the specific element in question.
+- **Paste the image** into Claude along with your prompt.
+> *Note:* Automatic screenshot capture is planned for a future update. For now, manually providing visual context helps the AI understand your model state better.
 
 ## Troubleshooting
 
